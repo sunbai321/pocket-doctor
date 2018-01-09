@@ -1,0 +1,138 @@
+<DOCTYPE!>
+<html>
+<head>
+	<title>从数据库获取数据显示到页面上</title>		
+	<meta charset='utf8'/>
+	<script src='js/jQuery2.1.js'></script>
+	<style>
+		*{
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		.div1{
+			border: 1px solid red;
+			height: 150px;
+			width: 500px;
+		}
+		.nav{
+			height: 50px;
+			width: 500px;
+			background-color: rgb(49,184,196);
+			color: white;
+			text-align: center;
+			line-height: 50px;
+		}
+		.nav h1{
+			font-size: 16px;
+
+		}
+		.right1{
+			display: inline-block;
+			float: left;
+			margin-left: 50px;
+		}
+		.content{
+			width: 500px;
+			height: 130px;
+			border: 1px solid red;
+		}
+		.content img{
+			height: 100px;
+			width: 100px;
+			float: left;
+		}
+		.right{
+			width: 300px;
+			float: left;
+			border: 1px solid yellow;
+		}
+		.right p{
+			display: inline-block;
+		}
+		.direction{
+			width: 500px;
+			height: 200px;
+			border: 1px solid red;
+		}
+		.special{
+			width: 500px;
+			height: 200px;
+			border: 1px solid blue;
+		}
+		h5{
+			border-bottom: 1px solid green;
+		}
+		.question{
+			width: 130px;
+			height: 30px;
+			font-size: 16px;
+			background-color: blue;
+			color: white;
+			border: 0;
+			border-radius: 5px;
+		}
+		.reservation{
+			width: 130px;
+			height: 30px;
+			font-size: 16px;
+			background-color: orange;
+			color: white;
+			border: 0;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+<div class="nav">
+	<span class='right1'>&lt</span>
+	<span>医生详情</span>
+</div>
+
+<div class="content">
+	<img src="" alt="医生图片" class="img1">
+	<div class="right">
+		<span class='name'></span>
+		<span class=''></span>
+	</div>
+</div>
+<div class="direction">
+	<h5 class="h1">医生介绍</h5>
+	<p class="p1"></p>
+</div>
+<div class="special">
+	<h5 class="h2">擅长疾病</h5>
+	<p class="p2"></p>
+</div>
+<input type="submit" value="向他问诊" class="question" />
+<input type="submit" value="预约挂号" class="reservation" />
+</body>
+<script>
+	var docid = location.hash.slice(1);
+	$.ajax({
+		type:'post',
+		url:'http://192.168.9.144:8080/doctor',
+		dataType:'JSON',
+		data:{doctorID:docid},
+		success:function(data){
+			$('.img1').attr('src',data[0].Pic);
+			$('.name').html(data[0].Dname);
+			$('.p1').html(data[0].Ddirection);
+			$('.p2').html(data[0].specialty);
+			localStorage.setItem('doctorid',data[0].DoctorID);
+			console.log(data);
+
+		}
+	});
+
+	$('.right').click(function(){
+		 window.history.back();
+	});
+
+	$(".reservation").click(function(){
+		var did=localStorage.getItem('doctorid');
+		$(location).prop('href','reservation.html#'+did);
+
+	});
+</script>
+</html>

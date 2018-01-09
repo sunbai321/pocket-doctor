@@ -1,0 +1,111 @@
+<DOCTYPE!>
+<html>
+<head>
+	<title>从数据库获取数据显示到页面上</title>		
+	<meta charset='utf8'/>
+	<script src='js/jQuery2.1.js'></script>
+	<style>
+		*{
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		.div1{
+			border: 1px solid red;
+			height: 150px;
+			width: 500px;
+		}
+		.nav{
+			height: 50px;
+			width: 500px;
+			background-color: rgb(49,184,196);
+			color: white;
+			text-align: center;
+			line-height: 50px;
+		}
+		.nav h1{
+			font-size: 16px;
+
+		}
+		.right{
+			display: inline-block;
+			float: left;
+			margin-left: 50px;
+		}
+		.red{
+			color: red;
+			float: right;
+			display: inline-block;
+			border: 1px solid red;
+		}
+		.div1 img{
+			width: 100px;
+			height: 100px;
+			float: left;
+			border: 1px solid pink;
+		}
+		.name .good{
+			display: inline-block;
+			float: left;
+			border: 1px solid yellow;
+		}
+		.middle{
+			text-align: left;
+			width: 200px;
+			height: 120px;
+			border: 1px solid blue;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="nav">
+	<span class='right'>&lt</span>
+	<span>口袋医生</span>
+</div>
+<div>
+	<span>您查阅的是：</span>
+	<span></span>
+	<span>的医生</span>
+</div>
+
+<div id='zhong'>
+	
+</div>
+
+</body>
+<script>
+		var docid = location.hash.slice(1);
+	$.ajax({
+		type:'post',
+		url:'http://192.168.9.144:8080/doctorList',
+		dataType:'JSON',
+		data:{doctorID:docid},
+		success:function(data){
+			for(var i=0;i<data.length;i++){
+			$("#zhong").html($("#zhong").html()+`
+				<a href="reservation_d.html#`+data[i].DoctorID+`">
+				<div class="div1">
+					<img src="`+data[i].Pic+`" alt="医生图片">
+					<div class="middle">
+						<span class='name'>`+data[i].Dname+`</span></br>
+						<span class='direction'>`+data[i].Ddirection.slice(0,9)+`</span>	
+					</div>
+					<span class='good'>`+data[i].goods+`</span>
+				</div>
+				</a>
+			`);
+			}
+
+			console.log(data);
+		}
+	});
+
+	$('.right').click(function(){
+		 window.history.back();
+	});
+
+
+</script>
+</html>

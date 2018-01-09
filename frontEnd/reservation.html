@@ -1,0 +1,129 @@
+<DOCTYPE!>
+<html>
+<head>
+	<title>从数据库获取数据显示到页面上</title>		
+	<meta charset='utf8'/>
+	<script src='js/jQuery2.1.js'></script>
+	<style>
+		*{
+			margin: 0 auto;
+			text-align: center;
+		}
+		div{
+			border:1px solid pink;
+		}
+		.nav{
+			height: 50px;
+			width: 500px;
+			background-color: rgb(49,184,196);
+			color: white;
+			text-align: center;
+			line-height: 50px;
+		}
+		.nav h1{
+			font-size: 16px;
+
+		}
+		.right{
+			display: inline-block;
+			float: left;
+			margin-left: 50px;
+		}
+		.tijiao{
+			border: 0px;
+			color: white;
+			background-color:lightblue;
+			width: 200px;
+			height: 30px;
+			font-size: 20px;
+		}
+		.tianjia {
+			border: 1px solid lightblue;
+			background-color: white;
+			color: lightblue;
+			width: 40px;
+			height: 20px;
+			font-size: 10px;
+		}
+		.genggai{
+			border: 1px solid lightblue;
+			background-color: white;
+			color: lightblue;
+			width: 40px;
+			height: 20px;
+			font-size: 10px;
+		}
+		.yiyuan{
+			float: left;
+		}
+		.yiyuan1{
+			float: right;
+		}
+		.time{
+			float: left;
+		}
+		.time1{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+
+<div class="nav">
+	<span class='right'>&lt</span>
+	<span>口袋医生</span>
+</div>
+
+<div style="width:500px;height:150px;">
+	<h5>医生信息</h5>
+	<img src="" alt="">
+	<p></p>
+</div>
+
+<div style="width:500px;height:50px;">
+	<span class='yiyuan'>初诊医院</span><span class='yiyuan1'>北京德胜门中医院</span>
+</div>
+
+<div style="width:500px;height:50px;">
+	<span class='time'>就诊时间</span><span class='time1'>请选择</span>
+	<input type="date" class="date1" />
+</div>
+
+<div style="height:200px;width:500px;">
+	温馨提示；</br>
+	1.建议在每天8:00-21:00之间进行预约；</br>
+	2.因专家号源稀缺，建议隔周挂号，成功率较高，不建议挂当天号</br>
+	3.挂号费由医院收取，口袋医生仅提供预约挂号服务，不收取任何费用。
+</div>
+<h5 style="border:1px solid red;height:50px;width:500px;">个人信息</h5>
+
+<div style="height:50px;width:500px;">
+	<span>就诊人信息：</span>
+	<input type="button" value="更改" class="genggai">
+	<input type="button" value="添加" class="tianjia">
+</div>
+<div style='height:40px;width:500px;'>
+	<span>身份证：</span>
+	<span>手机号：</span>
+</div>
+<div  style='height:150px;width:500px;'>
+	<input type="CheckBox"/>
+	如果遇到医生听诊等特殊情况，您的预约可能会被取消，客户人员会及时通知您，请关注预约状态，保持手机畅通。
+</div>
+<input type="submit" value="提交预约" class="tijiao">
+</body>
+<script>
+	var docid = location.hash.slice(1);
+	$.ajax({
+		type:'post',
+		url:'http://192.168.9.144:8080/reservation_list',
+		dataType:'JSON',
+		data:{doctorID:docid},
+		success:function(data){
+			console.log(data);
+
+		}
+	});
+	
+</script>
+</html>

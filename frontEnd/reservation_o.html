@@ -1,0 +1,59 @@
+<DOCTYPE!>
+<html>
+<head>
+	<title>从数据库获取数据显示到页面上</title>		
+	<meta charset='utf8'/>
+	<script src='js/jQuery2.1.js'></script>
+	<style>
+		*{
+			margin: 0 auto;
+		}
+		#zhong{
+			height: 400px;
+			width: 400px;
+			border: 1px solid yellow;
+		}
+		.div1{
+			width: 80px;
+			height: 80px;
+			float: left;
+			border: 1px solid red;
+			text-align: center;
+			line-height: 50px;
+			margin-left: 20px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+<div id="zhong">
+
+</div>
+
+
+</body>
+<script>
+	var offid=location.hash.slice(1);
+	console.log(offid);
+	$.ajax({
+		type:'post',
+		url:'http://192.168.9.144:8080/office',
+		dataType:"JSON",
+		data:{officeID:offid},
+		success:function(data){
+			console.log(data);
+			for(var i=0;i<data.length;i++){
+				$('#zhong').html($('#zhong').html()+`
+				<a href="reservation_dl.html#`+data[i].officeID+`">
+					<div class="div1">
+						`+data[i].officeName+`
+					</div>
+				</a>
+				`);
+			}
+		}
+	});
+	
+</script>
+</html>
+

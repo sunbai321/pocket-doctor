@@ -1,0 +1,98 @@
+<DOCTYPE!>
+<html>
+<head>
+	<title>从数据库获取数据显示到页面上</title>		
+	<meta charset='utf8'/>
+	<script src='js/jQuery2.1.js'></script>
+	<style>
+		*{
+			margin: 0 auto;
+		}
+		
+		.div1{
+			float: left;
+			border: 1px solid red;
+			height: 100px;
+			width: 500px;
+		}
+		#zhong{
+			width: 400px;
+			height: auto;
+			border: 1px solid blue;
+		}
+		
+		.special{
+			border: 0px;
+			border-bottom: 1px solid red;
+			width: 50px;
+		}
+		.top1{
+			width: 30px;
+			height: 30px;
+			font-size: 16px;
+			color: red;
+			border: 1px solid yellow;
+			float: left;
+		}
+		.div1 img{
+			width: 100px;
+			height: 50px;
+			float: left;
+		}
+		.txt{
+			width: 200px;
+			height: 70px;
+			border: 1px solid blue;
+			float: left;
+		}
+		.txt span{
+			font-size: 16px;
+		}
+		.dir {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<div id='zhong'>
+	
+</div>
+
+</body>
+<script>
+	$.ajax({
+		type:'get',
+		url:'http://192.168.9.144:8080/hospital',
+		success:function(data){
+			for(var i=0;i<12;i++){
+
+				$('#zhong').html($('#zhong').html()+`
+					<div class='div1'>
+						<a href="reservation_o.html#`+data[i].hospitalID+`">
+
+						<div class="top1">`+data[i].hospitalID+`</div>
+							<img src="`+data[i].hospitalImg+`"/>
+							<div class="txt">
+							    <span class='hospitalName'>`+data[i].hospitalName+`</span>
+								<span class='add'>`+data[i].hospitalAddress.slice(0,6)+`</span>
+								<span class='level'>`+data[i].level+`</span>
+								<span class='dir'>`+data[i].hospitalDirection.slice(0,6)+`</span>
+							</div>
+						</a>
+
+					</div>
+
+
+					`)
+			}
+			
+
+
+
+
+			console.log('获取到第一个医院的信息。',data);
+			console.log(data[0].hospitalID);
+		}
+	});
+</script>
+</html>
