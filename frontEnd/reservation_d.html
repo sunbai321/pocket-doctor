@@ -111,14 +111,14 @@
 	var docid = location.hash.slice(1);
 	$.ajax({
 		type:'post',
-		url:'http://192.168.9.144:8080/doctor',
+		url:'http://192.168.163.144:8080/doctor',
 		dataType:'JSON',
 		data:{doctorID:docid},
 		success:function(data){
 			$('.img1').attr('src',data[0].Pic);
 			$('.name').html(data[0].Dname);
-			$('.p1').html(data[0].Ddirection);
-			$('.p2').html(data[0].specialty);
+			$('.p1').html(data[0].Ddirection.slice(0,100));
+			$('.p2').html(data[0].specialty.slice(0,100));
 			localStorage.setItem('doctorid',data[0].DoctorID);
 			console.log(data);
 
