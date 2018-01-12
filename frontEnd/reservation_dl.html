@@ -79,7 +79,7 @@
 		var docid = location.hash.slice(1);
 	$.ajax({
 		type:'post',
-		url:'http://192.168.9.144:8080/doctorList',
+		url:'http://192.168.163.144:8080/doctorList',
 		dataType:'JSON',
 		data:{doctorID:docid},
 		success:function(data){
