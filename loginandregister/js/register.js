@@ -46,22 +46,16 @@
        	 var bb=$("#fn2").val();
 		$.ajax({
 		 	type:'post',
-		 	url:'http://192.168.91.144:8080/user',
-		     data:{data1:aa,data2:bb},
+		 	url:'http://192.168.91.144:8080/add_user',
+		     data:{userTel:aa,userPWD:bb},
 		
 	 	    success:function(data){
 	 	    	console.log(data);
 	
-//	    	    if(data==0){
-//	    	    	$(".warn").html("该手机号已经被注册");
-//	    	    }else if(data==2){
-//	    	 	   $(".warn").html("数据库报错");
-//	    	     } else if(data ==1){
-//	    	       
-//	    	     	     window.location.href = "login.html";     
-//
-//	    	        }
-	         },
+	    	    
+
+	    	      
+	       },
 	    	 
 	
 	      error:function(){
