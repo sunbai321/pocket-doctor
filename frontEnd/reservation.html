@@ -106,6 +106,43 @@
 			background-color: lightblue;
 			border-radius: 5px;
 		}
+		.special2{
+			background-color: white;
+			display:none;
+			position: fixed;
+			left: 360px;
+			top: 100px;
+			width: 300px;
+			font-size: 16px;
+			color: blue;
+			height: auto;
+			padding: 10px;
+		}
+		.btn{
+			width: 50px;
+			height: 20px;
+			line-height: 20px;
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 0;
+			margin-top: 5px;
+		}
+		.btn1{
+			width: 150px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 10px;
+			color: white;
+			background-color: lightblue;
+			border: 0;
+			border-radius: 3px;
+			margin-top: 10px;
+		}
+		.btnbtn{
+			width: 322px;
+			height: auto;
+			border: 1px solid red;
+		}
 	</style>
 </head>
 <body>
@@ -138,7 +175,7 @@
 <h5 style="border:1px solid red;height:30px;width:500px;">个人信息</h5>
 
 <div style="height:50px;width:500px;">
-	<span style='float:left;'>就诊人信息：</span>
+	<span style='float:left;' class='patient_name'>就诊人信息：</span>
 	<input type="button" value="更改" class="genggai">
 	<input type="button" value="添加" class="tianjia">
 </div>
@@ -147,7 +184,7 @@
 	<span style='float:right;font-size: 16px;' class='sjh'>手机号：</span>
 </div>
 <div  style='height:150px;width:500px;'>
-	<input type="CheckBox"/>
+	<input type="CheckBox" class="checkbox1"/>
 	如果遇到医生听诊等特殊情况，您的预约可能会被取消，客户人员会及时通知您，请关注预约状态，保持手机畅通。
 </div>
 <input type="submit" value="提交预约" class="tijiao">
@@ -160,8 +197,9 @@
 		<li class="li3"><input type="radio" name="riqi" class="date" value="" /></li>
 		<li class="li4"><input type="radio" name="riqi" class="date" value="" /></li>
 	</ul>
-	<button class="cancle">取消</button>
 	<button class="srue">确定</button>
+	<button class="cancle">取消</button>
+	
 </div>
 <div class="special1">
 	<h5>添加就诊人</h5>
@@ -172,6 +210,15 @@
 		<li>手机号：<input type="text" placeholder='请输入手机号' class="tel" /></li>
 	</ul>
 	<button class="tian">确认添加</button>
+	<button class="quxiao1">取消</button>
+</div>
+<div class="special2">
+	<span style='display:block;'>更改就诊人</span>
+	<div class="btnbtn">
+		
+	</div>
+	<button class="btn1">添加新就诊人</button>
+	<button class="quxiao2">取消</button>
 </div>
 </body>
 <script src="js/reservation.js"></script>
