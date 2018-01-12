@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>前台模板</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="js/jquery.js"></script>
+   <script src='js/rem.js'></script>
+	<style>
+	*{
+		margin:0;
+		text-align: center;
+	}	
+	#nav{
+		width: 10.8rem;
+		height: 55px;
+		line-height: 50px;
+		background-color: #31b8c4;
+		color:white;
+		font-size: 20px;
+	}
+	#footer{
+		height: 55px;
+		width:10.8rem;
+		
+		position:fixed;
+		bottom: 0px;
+		border-top:1px solid #bbbbbb;
+	}
+	#content{
+		height:800px; 
+		width: 10.8rem;
+	}
+	.navbar{
+		width: 2.16rem;
+		height: 45px;
+		float: left;
+		font-size: 16px;
+		color: black;
+		padding-top:3px;
+
+	}
+	.navbar img{
+		
+		width: 35px;
+		height: 32px;
+	}
+	.navbar p
+	{
+		margin-top: -5px;
+	}
+
+   #footer a{
+   		float: left;
+		height: 55px;
+	}
+	#chao {
+		background-color: #31b8c4;
+	}
+	</style>
+</head>
+<body>
+<div id="nav">口袋医生</div>
+<div id='content'></div>
+<div id="footer">
+
+   <a href="" id="chao">
+	<div class="navbar">
+	   <img src="images/home-black.png" alt="">
+		 <p>首页</p>
+	</div>
+	</a>
+	
+	<a href="">
+	<div class="navbar">
+	    <img src="images/knowage-black.png" alt="">
+		<p>知识库</p>
+	</div>
+	</a>
+	<a href="">
+	<div class="navbar">
+	    <img src="images/message-black.png" alt="">
+		<p>会诊室</p>
+	</div>
+	</a>
+	<a href="">
+	<div class="navbar">
+	    <img src="images/circle-black.png" alt="">
+		<p>病友帮</p>
+	</div>
+	</a>
+	<a href="">
+	<div class="navbar">
+	    <img src="images/mine-black.png" alt="">
+		<p>我</p>
+	</div>
+	</a>
+</div>
+</body>
+<script>
+  $("#chao").mouseover(function(){
+  	$("#chao").css("background-color","#33FFEE");
+
+  })
+</script>
+</html>
