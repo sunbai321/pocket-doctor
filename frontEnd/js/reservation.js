@@ -17,8 +17,8 @@ $.ajax({
 		reservation_hosid=data[0];
 		reservation_offid=data[1];
 		reservation_docid=data[2];
-		console.log('reservation_hosid',reservation_docid);
 		$('.yiyuan1').html(data[3]);
+		localStorage.setItem('hospitalName',data[3]);
 		$('.name').html(data[5]+data[3]+data[4]);
 		console.log(data);
 	}
@@ -43,6 +43,7 @@ $.ajax({
 				(function(k){
 					$(btn_spe[k]).click(function(){	
 						reservation_patid=data[k].patientID;
+						localStorage.setItem('patient_name',data[k].patientName);
 						$(".patient_name").html(data[k].patientName);
 						$('.sfz').html(data[k].IDcard);
 						$(".sjh").html(data[k].patientTel);
@@ -97,6 +98,7 @@ $.ajax({
 						$(".srue").attr('disabled',false);
 						//存储预约日期
 						reservation_date=$(dateRadio[i]).val();
+						localStorage.setItem('rdate',reservation_date);
 						console.log(reservation_date);
 						$(".time1").html($(dateRadio[i]).val());
 						$(".special").css('display','none');
@@ -252,5 +254,6 @@ $('.tijiao').click(function(){
 			}
 
 		});//ajax结束
+		$(location).prop('href','reservation_success.html');
 	}
 })
