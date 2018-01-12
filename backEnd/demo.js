@@ -45,6 +45,7 @@ var data6;
 var enddata6;
 var data7;
 var enddata7;
+var data8;
 
 app.post('/office',function(req,res){
     req.on('data',function(data){
@@ -143,6 +144,7 @@ app.post('/patient_get',function(req,res){
 var date01;
 var date02;
 app.post('/reservation_date',function(req,res){
+
   req.on('data',function(data){
      data6=data.toString('utf8');
     enddata6=data6.slice(9);
@@ -177,7 +179,32 @@ app.post('/add_patient',function(req,res){
     pool.query('insert into patient set?',{user_id:userid,patientName:name,IDcard:card,patientAge:page,patientTel:ptel},function(error,results){
       if(error) throw error;
       console.log(results.insertId);
-      res.send('插入成功');
+      res.send('success');
+    });
+  });
+});
+var ruserid;
+var rhosid;
+var roffid;
+var rdocid;
+var rpatid;
+var amount;
+var rdate;
+app.post('/add_reservation',function(req,res){
+  req.on('data',function(data){
+    data8=qs.parse(data.toString('utf8'));
+    console.log(data8);
+    ruserid=data8.Ruserid;
+    rhosid=data8.Rhospital;
+    rdocid=data8.Rdoctor;
+    rpatid=data8.Rpatient;
+    amount=data8.Ramount;
+    rdate=data8.date;
+  });
+  req.on('end',function(){
+    pool.query('insert into reservation set?',{Ruserid:ruserid,Rhospital:rhosid,Rdoctor:rdocid,Rpatient:rpatid,amount:amount,date:rdate},function(error,results){
+        if(error) throw error;
+        console.log(results.insertId);
     });
   });
 });
