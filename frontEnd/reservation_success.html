@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>预约信息展示</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="js/jquery2.1.js"></script>
+   <script src='js/rem.js'></script>
+	<style>
+	*{
+		margin:0;
+		text-align: center;
+	}	
+	#header{
+		width: 10.8rem;
+		height: 55px;
+		line-height: 55px;
+		background-color: white;
+		color:orange;
+		font-size: 28px;
+		border-bottom: 0.1px solid #bbbbbb;
+	}
+	#footer{
+		height: 55px;
+		width:10.8rem;
+		
+		position:fixed;
+		bottom: 0px;
+		border-top:1px solid #bbbbbb;
+	}
+	#content{
+		height: auto;
+		width: 10.8rem;
+	}
+	.navbar{
+		width: 2.16rem;
+		height: 45px;
+		float: left;
+		font-size: 16px;
+		color: black;
+		padding-top:3px;
+
+	}
+	.navbar img{
+		
+		width: 35px;
+		height: 32px;
+	}
+	.navbar p
+	{
+		margin-top: -5px;
+	}
+
+   #footer a{
+   		float: left;
+		height: 55px;
+	}
+	#chao {
+		background-color: #31b8c4;
+	}
+	.p1,.p2,.p3{
+		width: 10.8rem;
+		height: 55px;
+		line-height: 55px;
+		font-size:20px;
+	}
+	.p4{
+		width: 10.8rem;
+		height: 85px;
+		line-height: 55px;
+		font-size:20px;
+	}
+	.l1{
+		display: inline-block;
+		width: 100px;
+		float: left;
+		margin-left: 10px;
+	}
+	.r1,.r2,.r3{
+		display: inline-block;
+		float: left;
+		margin-left: 40px;
+	}
+	.p4{
+		border-bottom: 0.1px solid  #bbbbbb;
+		color: orange;
+		font-size: 17px;
+	}
+	</style>
+</head>
+<body>
+<div id="header">
+	预约成功
+</div>
+<div id="content">
+	<p class="p1"><span class='l1'>就诊人：</span><span class='r1'>123</span></p>
+	<p class="p2"><span class='l1'>就诊时间：</span><span class='r2'>123</span></p>
+	<p class="p3"><span class='l1'>就诊医院：</span><span class='r3'>123</span></p>
+	<p class="p4">注:届时请带好就诊人的身份证到预约医院进行就医</p>
+</div>
+
+<div id="footer">
+
+   <a href="" id="chao">
+	<div class="navbar">
+	   <img src="images/home-black.png" alt="">
+		 <p>首页</p>
+	</div>
+	</a>
+	
+	<a href="">
+	<div class="navbar">
+	    <img src="images/knowage-black.png" alt="">
+		<p>知识库</p>
+	</div>
+	</a>
+	<a href="">
+	<div class="navbar">
+	    <img src="images/message-black.png" alt="">
+		<p>会诊室</p>
+	</div>
+	</a>
+	<a href="">
+	<div class="navbar">
+	    <img src="images/circle-black.png" alt="">
+		<p>病友帮</p>
+	</div>
+	</a>
+	<a href="">
+	<div class="navbar">
+	    <img src="images/mine-black.png" alt="">
+		<p>我</p>
+	</div>
+	</a>
+</div>
+</body>
+<script>
+	var p=localStorage['patient_name'];
+	var d=localStorage['rdate'];
+	var h=localStorage['hospitalName'];
+	$('.r1').html(p);
+	$('.r2').html(d);
+	$('.r3').html(h);
+</script>
+</html>
