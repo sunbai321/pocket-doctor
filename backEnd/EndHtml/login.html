@@ -4,7 +4,7 @@
 	<title>登录</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <script src="../js/jquery-2.2.2.js"></script>
+    <script src="../js/jquery2.1.js"></script>
     
 	<style>
     *{
@@ -13,7 +13,11 @@
 	}
 	.container{
 		width:1000px;
-		height:800px;
+		height:630px;
+		border: 1px solid #31b8c4 ;
+	}
+	.aa,.dd {
+		border: 0;
 	}
 	.head{
 		width:1000px;
@@ -25,50 +29,54 @@
 	}
     .content{
     	width:1000px;
-    	height:600px;
+    	height:500px;
     }
     .tou{
-    	border-radius:50%;
-    	width:180px;
-    	height:180px;
+    	border-radius:80%;
+    	width:100px;
+    	margin-top: 30px;
     }
     .aa{
     	font-size:20px;
     	width:100px;
     	height:30px;
-    	margin-top:50px;
+    	text-align: center;
+    	line-height: 30px;
+		margin-right: 30px;
     }
     .bb{
     	width:300px;
-    	height:25px;
-    	margin-left:-5px;
-    	padding-top:7px;
+    	height:30px;
+    	line-height: 30px;
+    	font-size: 20px;
     }
     .dd{
     	font-size:20px;
     	width:100px;
     	height:30px;
     	margin-top:50px;
-    	margin-left:20px;
+    	line-height: 30px;
+    	margin-right: 30px;
     }
     .cc{
     	width:150px;
-    	height:25px;
-    	margin-left:-5px;
-    	padding-top:7px;
+    	height:30px;	
+    	font-size:20px;
+    	line-height: 30px;
     }
     .ee{
-    	width:100px;
-    	height:25px;
-    	font-weight:bold;
+    	width:80px;
+    	height:30px;
     	font-size:20px;
-    	padding-top:7px;
-    	margin-right:0px;
+    	line-height: 30px;
     }
     .ff{
     	color:#31b8c4;
-    	width:70px;
-    	height:25px;
+    	width:50px;
+    	height:30px;
+    	border:0px;
+    	background-color: rgba(255,255,255,0.1);
+    	line-height: 30px;
     }
     .login{
     	background-color:#31b8c4 ;
@@ -76,34 +84,45 @@
     	width:450px;
     	height:50px;
     	font-size:20px;
-    	margin-top:100px;
+    	margin-top:60px;
+    	border: 0px;
+    	border-radius: 2px;
+    }
+    .txt{
+    	width: 420px;
+    	height: 80px;
+    	line-height: 80px;
     }
 	</style>
 </head>
 <body>
    <div class="container">
       <div class="head">
-      	 <p>口袋医生</p>
+      	 <p>口&nbsp;袋&nbsp;医&nbsp;生&nbsp;管&nbsp;理&nbsp;系&nbsp;统&nbsp;界&nbsp;面</p>
       	
       </div>
       <div class="content">
-      	  <div ><img class="tou" src="../images/ali.jpg" /></div>
-      	  <div>
-      	    <input  value="用户名:" class="aa"/>
+      	  <img class="tou" src="../images/ali.png" />
+      	  
+      	  <div class="txt">
+      	  	<span class='aa'>用户名:</span>
       	     <input type="text" class="bb" />
       	  </div>
      	
-          <div>
-      	    <input  value="密码:" class="aa"/>
-      	    <input type="text" class="bb" />
+          <div class="txt">
+          	<span class='aa'>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+      	    <input type="password" class="bb" />
    
          </div>
-         <div>
-      	    <input  value="验证码:" class="dd"/>
+
+         <div class="txt">
+
+      	    <span class='dd'>验证码:</span>
       	    <input type="text" class="cc" />
             <input type="text" value="35wq" class="ee" />
-            <input type="button" value="换一换" class="ff" />
+            <input type="button" value="看不清" class="ff" />
          </div>
+
          <div>
          	 <input type="button" value="登录" class="login" />
          </div>
@@ -111,6 +130,8 @@
    </div>
 </body>
 <script>
-
+$('.login').click(function(){
+	
+})
 </script>
 </html>
