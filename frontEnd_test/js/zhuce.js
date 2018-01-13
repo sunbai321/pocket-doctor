@@ -34,45 +34,45 @@
     $("#phonenumber1").blur(function(){
     	var rge2=/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/;
 
-    	
       if($("#phonenumber1").val().length>=6 && $("#phonenumber1").val().length<=20 && rge2.test($("#phonenumber1").val())){
-          console.log($("#phonenumber1").val(),rge2.test($("#phonenumber1").val()));
-       
+          console.log($("#phonenumber1").val(),rge2.test($("#phonenumber1").val()));    
       }
       else{
       	 $("#phonenumber1").val('');
-        $("#phonenumber1").attr('placeholder','6-20位字母、数字组合,请重新输入');
+         $("#phonenumber1").attr('placeholder','6-20位字母、数字组合,请重新输入');
       }
     });
 
     $("#phonenumber2").blur(function(){
-      if($("#phonenumber1").val() != $("#phonenumber2").val()){
-        $("#phonenumber2").val('');
-        $("#phonenumber2").attr('placeholder','密码不一致，请重新输入');
+       if($("#phonenumber1").val() != $("#phonenumber2").val()){
+         $("#phonenumber2").val('');
+         $("#phonenumber2").attr('placeholder','密码不一致，请重新输入');
       }
     });
 
     
     $("#value").click(function(){
+      console.log('dianjiel ');
      $.ajax({
-	    url:"http://datainfo.duapp.com/shopdata/userinfo.php",
-	    data:{status:'register',userID:$("#phonenumber3").val(),password:$("#phonenumber1").val()},
+	    url:"http://192.168.163.144:8080/add_user",
+      type:'post',
+      dataType:'json',
+      data:{userTel:$("#phonenumber3").val(),passPWD:$("#phonenumber1").val()},
 	    success:function(data){
-				if(data == 0){
-					console.log('1');
-					$("#phonenumber3").val('');
-					$("#phonenumber3").attr('placeholder','用户名已被使用，请重新命名');
-				}
-				else if(data == 2){
-					console.log('2');
-					alert('数据库错误');
-				}
-				else{
-					console.log('0');
-					$("#value").css("background-color",'rgb(222,61,150)');
-					$(location).prop('href', 'denglu.html');
-				}
-		
+  			
+					console.log(data);
+          if(data ==2){
+            console.log('等于2 ，已经注册过',data);
+            $("#phonenumber3").attr('placeholder','该手机号已注册过，请重新填写');
+             $("#phonenumber3").val('');
+            $("#phonenumber2").val('');
+            $("#phonenumber1").val('');
+          }
+          else{
+            $("#value").css("background-color",'rgb(222,61,150)');
+            console.log('不等于2，没注册过',data);
+            $(location).prop('href', 'denglu.html');
+          }
 			}
 	    
 
