@@ -6,13 +6,13 @@
 	#footer{
 		height: 55px;
 		width:10.8rem;
-		
+		background-color: white;
 		position:fixed;
 		bottom: 0px;
 		border-top:1px solid #bbbbbb;
 	}
 	#content{
-		height:800px; 
+		height: 510px;
 		width: 10.8rem;
 	}
 	.navbar{
@@ -85,15 +85,72 @@
 		width: 10.8rem;
 		height: 118px;
 		border: 0.1px solid pink;
+		clear: both;
 	}
 	.item1{
 		width: 2.695rem;
-		height: 65px;
+		height: 70px;
 		float: left;
 		padding-bottom: 10px;
 		border-bottom: 0.1px solid  #dde5eb;
 		border-right: 0.1px solid  #dde5eb;
 	}
 	.itemTxt{
-		font-size:16px;
+		font-size:17px;
+	}
+
+	.clearFix:after{		
+			content: "";
+			clear:both;
+			display: block;		
+		}
+	#doctor{
+		width: 10.8rem;
+		height: 160px;
+		border-bottom: 1px solid  #dde5eb;
+	}
+	.remen{
+		width: 10.8rem;
+		height: 40px;
+		line-height: 40px;
+		margin-top:0px;
+		border-bottom: 1px solid  #dde5eb;
+		margin-bottom: 8px;
+	}
+	.remen img{
+		float: left;
+		margin-top: 8px;
+		margin-left: 8px;
+	}
+	.remen span{
+		margin-left: 10px;
+		float: left;
+		font-weight: bold;
+	}
+	.remenyisheng{
+		width: 2.7rem;
+		height: 100px;
+		float: left;
+	}
+	.remenyisheng img{
+		border-radius: 50%;
+	}
+	.wenzhen,.guahao{
+		margin-top: 10px;
+		width: 4rem;
+		height: 42px;
+		font-size: 20px;
+		border: 0;
+		border-radius: 4px;
+		color: white;
+	}
+	.wenzhen{
+		float: left;
+		background-color: #31b8c4;
+		margin-left:30px;
+	}
+	.guahao{
+		float: right;
+		background-color: #fb8c00;
+		margin-right:30px;
 	}
