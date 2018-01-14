@@ -1,0 +1,99 @@
+	*{
+		margin:0;
+		text-align: center;
+	}	
+
+	#footer{
+		height: 55px;
+		width:10.8rem;
+		
+		position:fixed;
+		bottom: 0px;
+		border-top:1px solid #bbbbbb;
+	}
+	#content{
+		height:800px; 
+		width: 10.8rem;
+	}
+	.navbar{
+		width: 2.16rem;
+		height: 45px;
+		float: left;
+		font-size: 16px;
+		color: black;
+		padding-top:5px;
+		display: block;
+		text-decoration: none;
+
+	}
+	.navbar img{
+		margin-bottom: 3px;
+		width: 22px;
+		height: 22px;
+	}
+	.navbar p
+	{
+		margin-top: -5px;
+	}
+
+   #footer a{
+   		float: left;
+		height: 55px;
+	}
+    .swiper-container {
+      width:10.8rem;
+      height: 180px;
+    }
+    .swiper-slide {
+      text-align: center;
+      width: 10.8rem;
+      height:180px;
+    }
+    .kszx{
+    	margin-top:3px;
+    	width:10.8rem;
+    	height:70px;
+    	border-bottom: 0.1px solid #dde5eb;
+    }
+	.l1{
+		width: 8rem;
+		height: 64px;
+		float: left;
+	}
+	.txt{
+		font-size: 20px;
+		float: left;
+		margin-top: 5px;
+		margin-left: 10px;
+	}
+	.right{
+		width: 15px;
+	}
+
+	.l1 img{
+		float: left;
+		margin-top: 5px;
+		margin-left: 10px;
+	}
+	.r1{
+		width: 1.5rem;
+		height: 64px;
+		line-height: 64px;
+		float: right;
+	}
+	.office{
+		width: 10.8rem;
+		height: 118px;
+		border: 0.1px solid pink;
+	}
+	.item1{
+		width: 2.695rem;
+		height: 65px;
+		float: left;
+		padding-bottom: 10px;
+		border-bottom: 0.1px solid  #dde5eb;
+		border-right: 0.1px solid  #dde5eb;
+	}
+	.itemTxt{
+		font-size:16px;
+	}
