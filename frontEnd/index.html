@@ -37,7 +37,7 @@
     <!---->
 
 	<!--科室分类-->
-	<div id="office">
+	<div id="office" class="clearFix">
 		<div class="item1" style="border-left: 0.1px solid  #dde5eb;">
 			<img src="images/off1.png" alt='科室图标' style="width:27px;">
 			<p class="itemTxt">皮肤科</p>
@@ -72,7 +72,36 @@
 		</div>
 	</div>
 	<!---->
-	div
+	
+	<!--医生分类分类-->
+	<div class="clearFix" id="doctor">
+		<div class="remen">
+			<img src="images/doctor.png" alt="图标">
+			<span style='font-size:20px;'>热门医生</span>
+		</div>
+		<div>
+			<div class="remenyisheng">
+				<img src="images/doc1.png" alt="" style="width:60px;">
+				<p style='font-size:20px;' class="docname">医生</p>
+			</div>
+			<div class="remenyisheng">
+				<img src="images/doc2.png" alt="" style="width:60px;">
+				<p style='font-size:20px;' class="docname">医生</p>
+			</div>
+			<div class="remenyisheng">
+				<img src="images/doc3.jpg" alt="" style="width:60px;">
+				<p style='font-size:20px;' class="docname">医生</p>
+			</div>
+			<div class="remenyisheng">
+				<img src="images/doc4.png" alt="" style="width:60px;">
+				<p style='font-size:20px;' class="docname">医生</p>
+			</div>
+		</div>
+	</div>
+	<!---->
+
+	<input type="button" value="免费问诊" class="wenzhen">
+	<input type="button" value="预约挂号" class="guahao">
 </div>
 
 
@@ -110,5 +139,60 @@
 	loop:true,
 	pagination:'.swiper-pagination'
 });
+
+//渲染医生列表,默认是第一个医院的医生
+	$.ajax({
+		type:'post',
+		url:'http://192.168.163.144:8080/doctorList',
+		dataType:'JSON',
+		data:{doctorID:1},
+		success:function(data){
+			var doctorname=$(".docname");
+			for(var i=0;i<4;i++)
+			{
+				$(doctorname[i]).html(data[i].Dname);
+			}
+			//点击医生的时候，跳转页面
+			var hot = $('.remenyisheng');
+			for(var i=0;i<hot.length;i++){
+				(function(i){
+					$(hot[i]).click(function(){
+						window.location.href='reservation_d.html#'+data[i].DoctorID;
+					});
+				})(i)
+			}
+		}
+	});
+
+//渲染科室列表，默认是第一个医院的科室
+	$.ajax({
+		type:'post',
+		url:'http://192.168.163.144:8080/office',
+		dataType:"JSON",
+		data:{officeID:1},
+		success:function(data){
+			console.log(data);
+			var off= $('.itemTxt');
+			for(var i=0;i<7;i++){
+				$(off[i]).html(data[i].officeName);
+			}
+			//点击科室跳转到响应页面
+			for(var i=0;i<7;i++){
+				(function(i){
+					$(off[i]).click(function(){
+						window.location.href='reservation_dl.html#'+data[i].officeID;
+					});
+				})(i)
+			}
+			$(off[7]).click(function(){
+				window.location.href='reservation_o.html#1';
+			})
+		}
+	});
+
+//点击预约挂号跳转到医院列表
+$(".guahao").click(function(){
+	window.location.href='reservation_h.html';
+})
 </script>
 </html>
