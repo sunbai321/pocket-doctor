@@ -3,6 +3,10 @@
 <head>
 	<title>从数据库获取数据显示到页面上</title>		
 	<meta charset='utf8'/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src='js/rem.js'></script>
+	<script type="text/javascript" src="js/jQuery2.1.js"></script>
 	<script src='js/jQuery2.1.js'></script>
 	<style>
 		*{
@@ -12,20 +16,23 @@
 		
 		.div1{
 			border: 1px solid red;
-			height: 150px;
-			width: 500px;
+			height: 100px;
+			width: 10.8rem;
 		}
-		.nav{
-			height: 50px;
-			width: 500px;
-			background-color: rgb(49,184,196);
+		#nav{
+			width: 10.8rem;
+			height: 55px;
+			line-height: 55px;
+			background-color: #31b8c4;
 			color: white;
+			font-size: 20px;
 			text-align: center;
-			line-height: 50px;
-		}
-		.nav h1{
-			font-size: 16px;
-
+		}		
+		#nav img{
+			float: left;
+			margin-top: 15px;
+			margin-left: 20px;
+			width: 15px;
 		}
 		.right{
 			display: inline-block;
@@ -40,34 +47,81 @@
 		}
 		.div1 img{
 			width: 100px;
-			height: 100px;
+			height:80px;
 			float: left;
 			border: 1px solid pink;
 		}
-		.name .good{
-			display: inline-block;
+		.name {
+			display: block;
 			float: left;
 			border: 1px solid yellow;
 		}
 		.middle{
+			float: left;
 			text-align: left;
-			width: 200px;
-			height: 120px;
-			border: 1px solid blue;
+			width: 180px;
+			height: 80px;
+			margin-top: 5.8px;
+			border: 1px solid yellow;
 		}
-
+		#content{
+			width: 10.8rem;
+			height: 50px;
+			line-height: 50px;
+			border-bottom: 1px solid blue;
+		}
+		.spe1,.ke,.spe2,.spe3{
+			font-size: 20px;
+			float: left;
+		}
+		.spe1{
+			margin-left: 10px;
+		}
+		.spe3{
+			margin-left: 30px;
+			font-size: 15px;
+		}
+		.ke{
+			color: #31B8C4;
+			margin-right: 5px;
+			font-size: 22px;
+		}	
+		.name{
+			font-size: 15px;
+			margin-bottom: 5px;
+		}
+		.direction{
+			display: block;
+			clear: both;
+			text-align: left;
+			font-size: 15px;
+		}
+		.good{
+			float: left;
+			font-size: 18px;
+			color: red;
+			padding-top: 10px;
+			margin-left: 8px;
+		}
+		.good img{
+			width: 19px;
+			height: 19px;
+			margin-right: 10px;
+			border:0px;
+			
+		}
 	</style>
 </head>
 <body>
-
-<div class="nav">
-	<span class='right'>&lt</span>
-	<span>口袋医生</span>
+<div id="nav">
+	<img src="images/right1.png" alt="" class="back">
+	<span style='margin-left:-30px;'>口袋医生</span>
 </div>
-<div>
-	<span>您查阅的是：</span>
-	<span></span>
-	<span>的医生</span>
+<div id="content">
+	<span class='spe1'>您查阅的是：</span>
+	<span class='ke'></span>
+	<span class='spe2'>的医生</span>
+	<span class='spe3'>人气&nbsp;&nbsp;好评</span>
 </div>
 
 <div id='zhong'>
@@ -89,10 +143,13 @@
 				<div class="div1">
 					<img src="`+data[i].Pic+`" alt="医生图片">
 					<div class="middle">
-						<span class='name'>`+data[i].Dname+`</span></br>
-						<span class='direction'>`+data[i].Ddirection.slice(0,9)+`</span>	
+						<span class='name'>`+data[i].Dname+`</span>
+						<span class='direction'>`+data[i].Ddirection.slice(0,20)+`...</span>	
 					</div>
-					<span class='good'>`+data[i].goods+`</span>
+					<div class='good'>
+					<img src='images/good.png' alt='点赞数' class='god'>
+					`+data[i].goods+`
+					</div>
 				</div>
 				</a>
 			`);
@@ -106,6 +163,7 @@
 		 window.history.back();
 	});
 
-
+	var keshi=localStorage.getItem('offname');
+	$('.ke').html(keshi);
 </script>
 </html>

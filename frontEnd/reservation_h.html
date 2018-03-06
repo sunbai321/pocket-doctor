@@ -3,7 +3,12 @@
 <head>
 	<title>从数据库获取数据显示到页面上</title>		
 	<meta charset='utf8'/>
-	<script src='js/jQuery2.1.js'></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src='js/rem.js'></script>
+	<script type="text/javascript" src="js/jQuery2.1.js"></script>
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+	<script src='js/swiper-3.4.2.min.js'></script>
 	<style>
 		*{
 			margin: 0 auto;
@@ -11,38 +16,51 @@
 		
 		.div1{
 			float: left;
-			border: 1px solid red;
 			height: 100px;
-			width: 500px;
+			width: 10.8rem;
+			border-bottom: 1px solid #DDE5EB;
+		}
+		#zhong a:link{
+			color: #101010;
+		}
+		#zhong a:visited{
+			color: #101010;
+		}
+		#zhong a:hover{
+			color: #101010;
+		}
+		#zhong a:active{
+			color: #101010;
 		}
 		#zhong{
-			width: 400px;
-			height: auto;
-			border: 1px solid blue;
+			width: 10.8rem;	
 		}
-		
+		#zhong:after{		
+			content: "";
+			clear:both;
+			display: block;		
+		}
 		.special{
 			border: 0px;
-			border-bottom: 1px solid red;
 			width: 50px;
 		}
 		.top1{
 			width: 30px;
 			height: 30px;
 			font-size: 16px;
-			color: red;
-			border: 1px solid yellow;
+			color: blank;
 			float: left;
 		}
 		.div1 img{
-			width: 100px;
-			height: 50px;
+			margin-top: 10px;
+			width: 120px;
+			height: 75px;
 			float: left;
 		}
 		.txt{
+			margin-top: 10px;
 			width: 200px;
 			height: 70px;
-			border: 1px solid blue;
 			float: left;
 		}
 		.txt span{
@@ -51,9 +69,38 @@
 		.dir {
 			display: inline-block;
 		}
+		.div1 span{
+			float: left;
+		}
+		.add,.level{
+			display: block;
+			float: left;
+			clear: both;
+			color: #968C96;
+		}
+	#nav{
+		width: 10.8rem;
+		height: 55px;
+		line-height: 55px;
+		background-color: #31b8c4;
+		color: white;
+		font-size: 20px;
+		text-align: center;
+		margin-bottom: 10px;
+	}		
+	#nav img{
+		float: left;
+		margin-top: 15px;
+		margin-left: 20px;
+		width: 15px;
+	}
 	</style>
 </head>
 <body>
+<div id="nav">
+	<img src="images/right1.png" alt="" class="back">
+	<span style='margin-left:-30px;'>选择医院</span>
+</div>
 <div id='zhong'>
 	
 </div>
@@ -74,9 +121,8 @@
 							<img src="`+data[i].hospitalImg+`"/>
 							<div class="txt">
 							    <span class='hospitalName'>`+data[i].hospitalName+`</span>
-								<span class='add'>`+data[i].hospitalAddress.slice(0,6)+`</span>
+								<span class='add'>`+data[i].hospitalAddress+`</span>
 								<span class='level'>`+data[i].level+`</span>
-								<span class='dir'>`+data[i].hospitalDirection.slice(0,6)+`</span>
 							</div>
 						</a>
 
@@ -86,13 +132,12 @@
 					`)
 			}
 			
-
-
-
-
 			console.log('获取到第一个医院的信息。',data);
 			console.log(data[0].hospitalID);
 		}
 	});
+	$('.back').click(function(){
+		window.history.back();
+	})
 </script>
 </html>

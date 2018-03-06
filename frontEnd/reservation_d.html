@@ -115,7 +115,7 @@
 		dataType:'JSON',
 		data:{doctorID:docid},
 		success:function(data){
-			$('.img1').attr('src',data[0].Pic);
+			$('.img1').attr('src',data[0].pic);
 			$('.name').html(data[0].Dname);
 			$('.p1').html(data[0].Ddirection.slice(0,100));
 			$('.p2').html(data[0].specialty.slice(0,100));

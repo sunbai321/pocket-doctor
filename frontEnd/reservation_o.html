@@ -3,6 +3,12 @@
 <head>
 	<title>从数据库获取数据显示到页面上</title>		
 	<meta charset='utf8'/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src='js/rem.js'></script>
+	<script type="text/javascript" src="js/jQuery2.1.js"></script>
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+	<script src='js/swiper-3.4.2.min.js'></script>	<meta charset='utf8'/>
 	<script src='js/jQuery2.1.js'></script>
 	<style>
 		*{
@@ -10,22 +16,49 @@
 		}
 		#zhong{
 			height: 400px;
-			width: 400px;
-			border: 1px solid yellow;
+			width: 10.8rem;
 		}
 		.div1{
-			width: 80px;
+			width: 2.695rem;
 			height: 80px;
 			float: left;
-			border: 1px solid red;
+			overflow: hidden;
+			border-right: 0.1px solid #BBBBBB;
+			border-bottom: 0.1px solid #BBBBBB;
 			text-align: center;
-			line-height: 50px;
-			margin-left: 20px;
+			line-height: 2.68rem;
 			font-size: 16px;
 		}
+	
+		.div1:nth-of-type(2)
+		{
+		background:#ff0000;
+		}
+	#nav{
+		width: 10.8rem;
+		height: 55px;
+		line-height: 55px;
+		background-color: #31b8c4;
+		color: white;
+		font-size: 20px;
+		text-align: center;
+	}		
+	#nav img{
+		float: left;
+		margin-top: 15px;
+		margin-left: 20px;
+		width: 15px;
+	}
+	#zhong a{
+		color:#101010;
+	}
 	</style>
 </head>
 <body>
+<div id="nav">
+	<img src="images/right1.png" alt="" class="back">
+	<span style='margin-left:-30px;'>选择医院</span>
+</div>
 <div id="zhong">
 
 </div>
@@ -33,6 +66,9 @@
 
 </body>
 <script>
+	$('.back').click(function(){
+		window.history.back();
+	})
 	var offid=location.hash.slice(1);
 	console.log(offid);
 	$.ajax({
@@ -50,6 +86,14 @@
 					</div>
 				</a>
 				`);
+			}
+			var div11=$('.div1');
+			for(var i=0;i<data.length;i++){
+				(function(i){
+					$(div11[i]).click(function(){
+						localStorage.setItem('offname',data[i].officeName);
+					})
+				})(i)
 			}
 		}
 	});
