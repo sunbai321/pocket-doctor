@@ -1,0 +1,124 @@
+<DOCTYPE!>
+<html>
+<head>
+	<title>从数据库获取数据显示到页面上</title>		
+	<meta charset='utf8'/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src='js/rem.js'></script>
+	<script type="text/javascript" src="js/jQuery2.1.js"></script>
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+	<script src='js/swiper-3.4.2.min.js'></script>
+	<style>
+		*{
+			margin: 0 auto;
+		}
+		#nav{
+			width: 10.8rem;
+			height: 55px;
+			line-height: 55px;
+			background-color: #31b8c4;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			margin-bottom: 10px;
+		}		
+		#nav img{
+			float: left;
+			margin-top: 15px;
+			margin-left: 20px;
+			width: 15px;
+		}
+		#zhong{
+			font-size: 20px;
+			color:black;
+		}
+		.xiao{
+			color:#808080;
+		}
+		.xiao2{
+			
+		}
+		#zi{
+			font-size: 15px;
+		}
+		#title{
+			font: 20px;
+			color: #000000;
+		}
+		.suannai{
+			width:90%;
+			margin: 20px;
+			
+		}
+		#comment{
+			width: 100%;
+			height: 40px;
+			background-color:#A7A5A6;
+			
+			position:absolute;  
+			bottom:0; 
+		}
+	</style>
+</head>
+<body>
+<div id="nav">
+	<img src="images/right1.png" alt="" class="back">
+	<span style='margin-left:-30px;'>详情</span>
+</div>
+<div id='zhong'>
+	<p>酸奶:怎么挑？怎么喝？什么时候喝？</p>
+	<span style="font-size: 15px;" class="xiao">口袋医生&nbsp;&nbsp;2018-4-27</span>
+	<span class="xiao2">304<span>
+	<p id="zi">&nbsp;&nbsp;&nbsp;&nbsp;酸奶是很多MM的最爱，不仅有助清肠排毒还可以美容养颜。但是酸奶虽好喝，饮用过程也有很多技巧。
+		喝酸奶健康常识：酸奶什么时候喝最好？喝多少？下面，告诉你关于喝酸奶的各种小常识，让你喝得健康又放心。</p>
+		<img src="images/suannai.jpg"/ class="suannai">
+	<p id="title">1、什么时候喝酸奶比较好</p>
+	<p id="zi">&nbsp;&nbsp;&nbsp;&nbsp;时间不限。胃酸过多的避免饭前喝；
+		空腹喝酸奶促进排便，便秘者适合，腹泻者则不适合；其他人饭前饭后都可以喝。
+		但不要在吃完很丰盛的晚餐后再来一大瓶酸奶，因为这样额外增加了能量的摄入。
+		若要晚饭后喝酸奶，就要相应减少晚餐，否则会引发肥胖。</p>
+</div>
+<div id="comment">
+	<form>
+		<input type="text" style="width: 60%; margin-bottom: 30px;"/>
+		<button type="submit" class="btn btn-default" style="width: 20%;color: #31b8c4;">发送</button>
+	</form>
+</div>
+</body>
+<script>
+	$('.back').click(function(){
+		window.history.back();
+	})
+	/*
+	$.ajax({
+		type:'get',
+		url:'http://192.168.163.144:8080/hospital',
+		success:function(data){
+			for(var i=0;i<12;i++){
+
+				$('#zhong').html($('#zhong').html()+`
+					<div class='div1'>
+						<a href="reservation_o.html#`+data[i].hospitalID+`">
+
+						<div class="top1">`+data[i].hospitalID+`</div>
+							<img src="`+data[i].hospitalImg+`"/>
+							<div class="txt">
+							    <span class='hospitalName'>`+data[i].hospitalName+`</span>
+								<span class='add'>`+data[i].hospitalAddress+`</span>
+								<span class='level'>`+data[i].level+`</span>
+							</div>
+						</a>
+
+					</div>
+
+
+					`)
+			}
+			
+			console.log('获取到第一个医院的信息。',data);
+			console.log(data[0].hospitalID);
+		}
+	});*/
+</script>
+</html>
