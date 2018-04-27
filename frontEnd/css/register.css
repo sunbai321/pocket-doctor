@@ -3,8 +3,8 @@
       margin: 0 auto;
       padding: 0;
       font-size: 0.48rem;
-     background-image: url(../images/bg.jpg);
-    background-size: cover;
+      background-image: url(../images/bg.jpg);
+     background-size: cover;
      opacity:0.95;
     }
 
@@ -29,6 +29,7 @@
    .spe{
     margin-top: 20px;
     line-height: 1.4rem;
+    margin-bottom:30px;
    }
     #phone input{
       display: inline-block;
@@ -97,6 +98,9 @@
     .zc a{
       text-decoration: none;
       color: rgb(1,121,255); 
+     font-size:35px;
+     margin-top:46px;
+     color:rgb(153,153,153);
     }
     .title{
       font-size:1.1rem;

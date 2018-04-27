@@ -4,7 +4,7 @@
   });
 
   $("#zhuce").click(function(){
-   window.location.href='zhuce.html';
+   window.location.href='register.html';
   });
 
 

@@ -1,4 +1,4 @@
-    body{
+     body{
       text-align: center;
       margin: 0 auto;
       padding: 0;
@@ -14,6 +14,12 @@
       margin-right: 850px;
       margin-top: 30px;
       margin-bottom: 30px;
+    }
+    .pp{
+    	color:#31b8c4;
+    	margin-top:155px;
+    	font-weight:bold;
+    	font-size:1rem;
     }
     .name{
       width: 9.7rem;
