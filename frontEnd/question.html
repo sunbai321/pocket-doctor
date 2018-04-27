@@ -10,7 +10,8 @@
 	*{
 		margin:0;
 		text-align: center;
-	}	
+	}
+
 	#nav{
 		width: 10.8rem;
 		height: 55px;
@@ -18,6 +19,36 @@
 		background-color: #31b8c4;
 		color: white;
 		font-size: 20px;
+	}
+	#img{
+		height:160px;
+		wdth:100%;
+	}
+	.top{
+		height:40px;
+		width:100%;
+		float:left;
+		margin-top:20px;
+		border-top:1px solid #31b8c4;
+		line-height: 40px;;
+	}
+
+	.icon img{
+		height:0.7rem;
+		width:0.7rem;
+		float:left;
+		color: #31b8c4;
+		margin-left:15px;
+		margin-top:10px;
+	}
+	.icon p{
+		float:left;
+		font-size:18px;
+		margin-left:5px;
+	}
+	.down{
+		float:right;
+		margin-right:20px;
 	}
 	#footer{
 		height: 55px;
@@ -28,8 +59,77 @@
 		border-top:1px solid #bbbbbb;
 	}
 	#content{
-		height:800px; 
+		height:850px; 
 		width: 10.8rem;
+	}
+	.contet{
+		float:left;
+	}
+	.contet{
+		border-top:1px solid gainsboro;
+		width:100%;
+		height:30px;
+		line-height: 30px;
+	}
+	.wen{
+		float:left;
+		font-size:14px;
+		margin-left:20px;
+	}
+	.time{
+		float:right;
+		font-size:14px;
+		color:darkgray;
+		margin-right:20px;
+	}
+	.question{
+		border-top:1px solid gainsboro;
+		float:left;
+		width:100%;
+		height:50px;
+		line-height: 50px;
+	}
+	.question img{
+		float:right;
+		height:23px;
+		width:23px;
+		margin-right:20px;
+		margin-top:15px;
+	}
+	.detail{
+		font-size:14px;
+		color:darkgray;
+		float:left;
+		margin-left:30px;
+	}
+	.wait{
+		border-top:1px solid gainsboro;
+		width:100%;
+		height:40px;
+		float:left;
+		line-height:40px;
+		border-bottom:1px solid #31b8c4;
+	}
+	.return{
+		font-size:18px;
+		color:#31b8c4;
+		float:left;
+		margin-left:20px;
+	}
+	
+	#two{
+		margin-top:10px;
+	}
+	#btn{
+		background:#31b8c4;
+		width:80%;
+		height:40px;
+		text-align: center;
+		font-size:15px;
+		color:white;
+		margin-top: 20px;
+		border-radius: 10px;
+		border:none;
 	}
 	.navbar{
 		width: 2.16rem;
@@ -61,7 +161,55 @@
 </head>
 <body>
 <div id="nav">医生咨询</div>
-<div id='content'></div>
+<div id='content'>
+	<img src="images/doc5.jpeg" id="img">
+	<div id="one">
+	<div class="top">
+		<span class="icon"><img src="images/2.png">  <p>寻医问药</p></span>
+		<img src="images/down.png" class="down">
+	</div>
+	<div class="contet">
+		<p class="wen">骨科问题</p><p class="time">2018-04-26</p>
+	</div>
+	<div class="question">
+		<p class="detail">膝盖疼</p><img src="images/right2.png">
+	</div>
+	<div class="wait">
+		<p class="return">等待医生回复</p>
+	</div>
+	</div>
+	<div id="two">
+	<div class="top">
+		<span class="icon"><img src="images/2.png">  <p>寻医问药</p></span>
+		<img src="images/down.png" class="down">
+	</div>
+	<div class="contet">
+		<p class="wen">皮肤科问题</p><p class="time">2018-04-26</p>
+	</div>
+	<div class="question">
+		<p class="detail">长痘痘</p><img src="images/right2.png">
+	</div>
+	<div class="wait">
+		<p class="return">等待医生回复</p>
+	</div>
+	</div>
+	<div id="three">
+	<div class="top">
+		<span class="icon"><img src="images/2.png">  <p>寻医问药</p></span>
+		<img src="images/down.png" class="down">
+	</div>
+	<div class="contet">
+		<p class="wen">皮肤科问题</p><p class="time">2018-04-26</p>
+	</div>
+	<div class="question">
+		<p class="detail">长痘痘</p><img src="images/right2.png">
+	</div>
+	<div class="wait">
+		<p class="return">等待医生回复</p>
+	</div>
+	</div>
+	<input type="button" value="点我咨询" id="btn">
+</div>
 <div id="footer">
 	<a href="index.html" class="navbar">
 		<img src="images/m10.png" alt="">
