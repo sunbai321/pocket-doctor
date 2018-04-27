@@ -1,162 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>前台模板</title>
+	<title>我</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="css/me.css">
     <script src="js/jquery.js"></script>
-   <script src='js/rem.js'></script>
-	<style>
-	*{
-		margin:0;
-		text-align: center;
-	}	
-	a{
-		text-decoration: none;
-		color:#454345;
-	}
-	#nav{
-		width: 10.8rem;
-		height: 210px;	
-		background-color: #31b8c4;	
-		font-size: 20px;
-		color: white;
-	}
-	#footer{
-		height: 55px;
-		width:10.8rem;		
-		position:fixed;
-		bottom: 0px;
-		border-top:1px solid #bbbbbb;
-	}
-	#content{
-		width: 10.8rem;
-		font-size: 22px;
-	}
-	.navbar{
-		width: 2.16rem;
-		height: 45px;
-		float: left;
-		font-size: 16px;
-		color: black;
-		padding-top:5px;
-		display: block;
-		text-decoration: none;
-
-	}
-	.navbar img{
-		margin-bottom: 3px;
-		width: 22px;
-		height: 22px;
-	}
-	.navbar p
-	{
-		margin-top: -5px;
-	}
-
-   #footer a{
-   		float: left;
-		height: 55px;
-	}
-	.title{
-		width: 10.8rem;
-		height:50px;
-		line-height: 50px;
-		color: white;
-		font-size: 25px;
-	}
-	.message{
-		width: 21px;
-		float: right;
-		margin-right: 22px;
-		margin-top: 16px;
-	}
-	.list{
-		width: 19px;
-		float: left;
-		margin-left: 22px;
-		margin-top: 16px;
-	}
-	.yonghu{
-		font-size: 25px;
-	}
-	.jieshao{
-		font-size: 16px;
-	}
-	.sepa{
-		height: 47px;
-		width: 10.8rem;
-		line-height: 47px;
-		text-decoration: none;
-		display: block;
-	}
-	.right1{
-		width: 10px;
-		float: right;
-		margin-right: 14px;
-		margin-top: 12px;
-	}
-	.tupian{
-		float: left;
-		margin-left: 14px;
-		margin-top: 12px;
-		width: 22px;
-	}
-	.wenzi{
-		float: left;
-		margin-left: 10px;
-	}
-	</style>
+    <script src='js/rem.js'></script>
+	
 </head>
 <body>
-<div id="nav">
-	<div class="title">
-		<img src="images/list.png" alt="列表" class="list">
-		我
-		<img src="images/message.png" alt="消息" class="message">
-	</div>
-	<img src="images/touxiang.png" alt="">
-	<p class="yonghu">用户</p>
-	<p class="jieshao">介绍一下自己吧~</p>
-</div>
+	<!--顶部-->
+     <div id="nav">
+	     <div class="title">
+	    	<img src="images/list.png" alt="列表" class="list">
+	         	我
+		    <img src="images/message.png" alt="消息" class="message">
+	     </div>
+	     <img src="images/touxiang.png" alt="">
+         <p class="yonghu">用户</p>
+	     <p class="jieshao">介绍一下自己吧~</p>
+     </div>
+   <!--主体内容-->
+    <div id='content'>
+	     <a href="#" class='sepa'>
+	         <img src="images/doctor.png" alt="图片" class='tupian'>
+	         <span class='wenzi'>我的医生</span>
+	         <img src="images/right.png" alt="图片" class='right1'>
+	     </a>
+	     <a href="#" class='sepa'>
+	        <img src="images/mes.png" alt="图片" class='tupian'>
+	        <span class='wenzi'>我的消息</span>
+	        <img src="images/right.png" alt="图片" class='right1'>
+	    </a>
+	    <a href="#" class='sepa'>
+	       <img src="images/guahao.png" alt="图片" class='tupian'>
+	       <span class='wenzi'>我的挂号</span>
+	       <img src="images/right.png" alt="图片" class='right1'>
+	    </a>
+    	<a href="#" class='sepa'>
+	       <img src="images/patient.png" alt="图片" class='tupian'>
+	       <span class='wenzi'>常用就诊人</span>
+	       <img src="images/right.png" alt="图片" class='right1'>
+	    </a>
 
-<div id='content'>
-	<a href="#" class='sepa'>
-	<img src="images/doctor.png" alt="图片" class='tupian'>
-	<span class='wenzi'>我的医生</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-	<a href="#" class='sepa'>
-	<img src="images/mes.png" alt="图片" class='tupian'>
-	<span class='wenzi'>我的消息</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-	<a href="#" class='sepa'>
-	<img src="images/guahao.png" alt="图片" class='tupian'>
-	<span class='wenzi'>我的挂号</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-	<a href="#" class='sepa'>
-	<img src="images/patient.png" alt="图片" class='tupian'>
-	<span class='wenzi'>常用就诊人</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-	<div style="width:10.8rem;height:15px;border-top:0.1px solid #c1c1c1;border-bottom:0.1px solid #c1c1c1;">
-		&nbsp;
-	</div>
-	<a href="#" class='sepa'>
-	<img src="images/dingdan.png" alt="图片" class='tupian'>
-	<span class='wenzi'>我的订单</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-	<a href="#" class='sepa'>
-	<img src="images/patient.png" alt="图片" class='tupian'>
-	<span class='wenzi'>我的消息</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-	<a href="#" class='sepa'>
-	<img src="images/shoucang.png" alt="图片" class='tupian' >
-	<span class='wenzi'>我的收藏</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-	<a href="#" class='sepa' id="set">
-	<img src="images/set.png" alt="图片" class='tupian'  >
-	<span class='wenzi'>账号设置</span><img src="images/right.png" alt="图片" class='right1'>
-	</a>
-</div>
+	    <a href="#" class='sepa'>
+	       <img src="images/dingdan.png" alt="图片" class='tupian'>
+	       <span class='wenzi'>我的订单</span>
+	       <img src="images/right.png" alt="图片" class='right1'>
+	   </a>
+	   <a href="#" class='sepa'>
+	       <img src="images/patient.png" alt="图片" class='tupian'>
+	       <span class='wenzi'>我的消息</span>
+	       <img src="images/right.png" alt="图片" class='right1'>
+	   </a>
+	   <a href="#" class='sepa'>
+	        <img src="images/shoucang.png" alt="图片" class='tupian' >
+	       <span class='wenzi'>我的收藏</span>
+	       <img src="images/right.png" alt="图片" class='right1'>
+	   </a>
+	    <a href="#" class='sepa' id="set">
+	      <img src="images/set.png" alt="图片" class='tupian'  >
+	      <span class='wenzi'>账号设置</span>
+	      <img src="images/right.png" alt="图片" class='right1'>
+	    </a>
+    </div>
 
 <div id="footer">
 	<a href="index.html" class="navbar">
