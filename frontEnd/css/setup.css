@@ -1,0 +1,46 @@
+*{
+	margin:0;
+	text-align: center;
+}
+.header{
+	width:10.8rem;
+	height:60px;
+	line-height: 60px;
+	background-color: #31b8c4;	
+	color:white;
+	font-size:26px;
+	
+}
+.back{
+	float:left;
+	margin-left:5px;
+	margin-top:10px;
+	width:20px;
+}
+#content{
+		width: 10.8rem;
+		font-size: 22px;
+	}
+.sepa{
+		height: 47px;
+		width: 10.8rem;
+		line-height: 47px;
+		text-decoration: none;
+		display: block;
+	}
+.right1{
+		width: 10px;
+		float: right;
+		margin-right: 14px;
+		margin-top: 12px;
+	}
+.tupian{
+		float: left;
+		margin-left: 14px;
+		margin-top: 12px;
+		width: 30px;
+	}
+.wenzi{
+		float: left;
+		margin-left: 10px;	
+		color:black;
