@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>前台模板</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <script src="js/jquery.js"></script>
+   <script src='js/rem.js'></script>
+   <style>
+	*{
+		margin:0;
+
+	}
+
+	#nav{
+		width: 10.8rem;
+		height: 55px;
+		line-height: 50px;
+		background-color: #31b8c4;
+		color: white;
+		font-size: 20px;
+		text-align: center;
+	}
+	#nav img{
+		float:left;
+		height:23px;
+		width:23px;
+		margin-top:15px;
+		margin-left:10px;
+	}
+	#content p{
+		font-size:14px;
+		color:red;
+		
+		margin-top:10px;
+		width:90%;
+		margin-left:20px;
+		line-height:24px;
+	}
+	
+	#sex span{
+		font-size:15px;
+		color:black;
+		margin-left:30px;
+	}
+	.btn1{
+		/*background:#31b8c4;*/
+		width:23%;
+		height:30px;
+		text-align: center;
+		font-size:15px;
+		color:white;
+		margin-top: 20px;
+		border-radius: 5px;
+		border:none;
+	}
+	.btn2{
+		/*background:gainsboro;*/
+		width:23%;
+		height:30px;
+		text-align: center;
+		font-size:15px;
+		color:white;
+		margin-top: 20px;
+		border-radius: 5px;
+		border:none;
+		margin-left:20px;
+	}
+	#age{
+		margin-top:5px;
+	}
+	#age span{
+		font-size:15px;
+		color:black;
+		margin-left:30px;
+	}
+	#age input{
+		width:23%;
+		height:30px;
+		border:1px solid darkgray;
+	}
+	#question p{
+		font-size:15px;
+		color:black;
+		margin-left:30px;
+	}
+	#upload p{
+		margin-top:30px;
+		color:black;
+		margin-left:30px;
+	}
+	.imageFileInput{
+		width: 60px;
+    	height: 60px;
+		margin-left:50px;
+		margin-top:15px;
+    	background-image: url(images/upload.png); 
+	}
+	.fileInput{
+    	height: 100%;
+       	right: 0;
+    	top: 0;
+    	opacity: 0;
+	}
+	#button{
+		text-align: center;
+	}
+	#btn{
+		background:#31b8c4;
+		width:80%;
+		height:40px;
+		text-align: center;
+		font-size:15px;
+		color:white;
+		margin-top: 20px;
+		border-radius: 10px;
+		border:none;
+		margin:0 auto;
+	}
+	textarea{
+		height:200px;
+		width:100%;
+		font-size:14px;
+		color:darkgray;
+		border:none;
+		border-bottom:1px solid darkgray;
+		border-top:1px solid darkgray;
+		margin-top:10px;
+	}
+	#type{
+		border-bottom: 1px solid darkgray;
+		border-top: 1px solid darkgray;
+		height:50px;
+		width:100%;
+		line-height: 50px;
+	}
+	#type span{
+		font-size:15px;
+		color:black;
+		margin-left:30px;
+	}
+	#type img{
+		height:23px;
+		width:23px;
+		float:right;
+		margin-top:13px;
+		margin-right:20px;
+	}
+	.btn1:hover,.btn2:hover
+　　/*鼠标移上去变色（不点击）*/
+        {
+            color: #fff;
+            border-color: #b1b0b0;
+            background: #31b8c4;
+            border: none;
+        }
+        
+        .start
+        {
+            cursor: pointer;
+        }
+
+        .end
+        {
+            cursor: pointer;
+            color: #fff;
+            background: #b1b0b0;
+            border: none;
+        }
+	</style>
+ </head>
+ 
+<body>
+	<div id="nav">
+		<img src="images/left1.png">
+		快速提问
+	</div>
+	<div id='content'>
+		<p>温馨提示：所有问题均由医生利用业余时间进行公益性解答，若未能获得及时回复请耐心等待。</p>
+		<div id="sex">
+			<span>患者性别：
+			<input class="btn1" type="button" onclick="dj(this);" value="男" />
+			<input class="btn2" type="button" onclick="dj(this);" value="女" />
+			</span>
+		</div>
+		<div id="age">
+			<span>患者年龄：
+			<input type="text"></span>
+		</div>
+		<div id="question">
+			<p>问题描述：</p>
+			<textarea>请输入您的问题...</textarea> 
+		</div>
+		<div id="type">
+			<span>请选择疾病类型<span style="color:red;">*</span>
+				<img src="images/right2.png">
+			</span>
+		</div>
+		<div id="upload">
+			<p>上传就诊病例/检查报告/症状图片</p>
+			<div class="imageFileInput"><input type="file" class="fileInput"></div>
+		</div>
+		<div id="button">
+			<input type="button" value="提交咨询" id="btn">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+    $(function () {
+    //加载事件
+        var collection = $(".flag");
+        $.each(collection, function () {
+            $(this).addClass("start");
+        });
+    });
+    //单击事件
+    function dj(dom) {
+        var collection = $(".flag");
+        $.each(collection, function () {
+            $(this).removeClass("end");
+            $(this).addClass("start");
+        });
+        $(dom).removeClass("start");
+        $(dom).addClass("end");
+    }
+</script>
+</html>
