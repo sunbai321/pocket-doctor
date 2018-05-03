@@ -78,3 +78,8 @@
 
   		});
     });
+    
+    
+    $(".footer").click(function(){
+    	location.href="login.html";
+    })

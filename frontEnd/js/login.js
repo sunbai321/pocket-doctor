@@ -1,6 +1,6 @@
 
   $(".close").click(function(){
-    window.location.href='zhuye.html';
+    window.location.href='index.html';
   });
 
   $("#zhuce").click(function(){
