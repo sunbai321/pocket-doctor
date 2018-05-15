@@ -1,0 +1,33 @@
+<ion-header>
+
+    <ion-navbar text-center  color='mainblue'>
+  
+      <ion-buttons left>
+          <button ion-button icon-only (click)='back()'>
+            <img src="assets/imgs/left.png" alt="">
+          </button>
+      </ion-buttons>
+      <ion-title>预约挂号</ion-title>
+  
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content>
+<h4>
+  医生信息
+</h4>
+<section>
+  <div class="item" *ngFor="let item of arr">
+      <button ion-item>
+          <ion-avatar item-left>
+            <img src="{{item.pic}}">
+          </ion-avatar>
+          <p class="txt1">{{item.docname}}</p>
+          <p class="txt2">{{item.hname}}</p>
+          <p>{{item.officeName}}</p>
+        </button>
+  </div>
+</section>
+</ion-content>
